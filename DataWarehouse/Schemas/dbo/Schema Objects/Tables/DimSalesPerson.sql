@@ -5,8 +5,8 @@
     [NationalIDNumber]      NVARCHAR(50),
     [JobTitle]              NVARCHAR(50),
     [BirthDate]             DATE,
-    [MaritalStatus]         CHAR(1),
-    [Gender]                CHAR(1),
+    [MaritalStatus]         NCHAR(1),
+    [Gender]                NCHAR(1),
     [HireDate]              DATE,
     [Name]                  NVARCHAR(100),
     CONSTRAINT PK_DimSalesPerson PRIMARY KEY CLUSTERED (SalesPersonKey)

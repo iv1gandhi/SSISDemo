@@ -73,5 +73,8 @@
     <Build Include="Schemas\Schema Objects\Tables\LogPackagesIncLoad.sql" />
     <Build Include="Schemas\Programmability\Stored Procedures\SetPackageIncLoadStart.sql" />
     <Build Include="Schemas\Programmability\Stored Procedures\SetPackageIncLoadEnd.sql" />
+    <Build Include="Schemas\Schema Objects\Views\vw_Customer.sql" />
+    <Build Include="Schemas\Schema Objects\Views\vw_SalesPerson.sql" />
+    <Build Include="Schemas\Schema Objects\Views\vw_SalesOrders.sql" />
   </ItemGroup>
 </Project>

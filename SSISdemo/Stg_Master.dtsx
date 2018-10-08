@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="64"
-  DTS:VersionGUID="{1AA549DD-02AB-4B54-B324-5395EBC2F505}">
+  DTS:VersionBuild="66"
+  DTS:VersionGUID="{535E741D-4F65-49C4-A575-8BA907D0B37F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -95,8 +95,10 @@
                       description="The SQL command to be executed."
                       name="SqlCommand"
                       UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT CustomerID,
-    AccountNumber
-FROM Sales.Customer;</property>
+    AccountNumber,
+PersonID
+FROM Sales.Customer
+WHERE PersonID IS NOT NULL;</property>
                     <property
                       dataType="System.String"
                       description="The variable that contains the SQL command to be executed."
@@ -152,6 +154,15 @@ FROM Sales.Customer;</property>
                           lineageId="Package\Load Customer\DFT Customer\AdWorks Sales_Customer.Outputs[OLE DB Source Output].Columns[AccountNumber]"
                           name="AccountNumber"
                           truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Load Customer\DFT Customer\AdWorks Sales_Customer.Outputs[OLE DB Source Output].Columns[PersonID]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load Customer\DFT Customer\AdWorks Sales_Customer.Outputs[OLE DB Source Output].ExternalColumns[PersonID]"
+                          lineageId="Package\Load Customer\DFT Customer\AdWorks Sales_Customer.Outputs[OLE DB Source Output].Columns[PersonID]"
+                          name="PersonID"
+                          truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -165,6 +176,10 @@ FROM Sales.Customer;</property>
                           dataType="str"
                           length="10"
                           name="AccountNumber" />
+                        <externalMetadataColumn
+                          refId="Package\Load Customer\DFT Customer\AdWorks Sales_Customer.Outputs[OLE DB Source Output].ExternalColumns[PersonID]"
+                          dataType="i4"
+                          name="PersonID" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -184,6 +199,11 @@ FROM Sales.Customer;</property>
                           lineageId="Package\Load Customer\DFT Customer\AdWorks Sales_Customer.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
+                        <outputColumn
+                          refId="Package\Load Customer\DFT Customer\AdWorks Sales_Customer.Outputs[OLE DB Source Error Output].Columns[PersonID]"
+                          dataType="i4"
+                          lineageId="Package\Load Customer\DFT Customer\AdWorks Sales_Customer.Outputs[OLE DB Source Error Output].Columns[PersonID]"
+                          name="PersonID" />
                         <outputColumn
                           refId="Package\Load Customer\DFT Customer\AdWorks Sales_Customer.Outputs[OLE DB Source Error Output].Columns[CustomerID]"
                           dataType="i4"
@@ -287,6 +307,12 @@ FROM Sales.Customer;</property>
                           cachedName="AccountNumber"
                           externalMetadataColumnId="Package\Load Customer\DFT Customer\Staging dbo_Customer.Inputs[OLE DB Destination Input].ExternalColumns[AccountNumber]"
                           lineageId="Package\Load Customer\DFT Customer\AdWorks Sales_Customer.Outputs[OLE DB Source Output].Columns[AccountNumber]" />
+                        <inputColumn
+                          refId="Package\Load Customer\DFT Customer\Staging dbo_Customer.Inputs[OLE DB Destination Input].Columns[PersonID]"
+                          cachedDataType="i4"
+                          cachedName="PersonID"
+                          externalMetadataColumnId="Package\Load Customer\DFT Customer\Staging dbo_Customer.Inputs[OLE DB Destination Input].ExternalColumns[PersonID]"
+                          lineageId="Package\Load Customer\DFT Customer\AdWorks Sales_Customer.Outputs[OLE DB Source Output].Columns[PersonID]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -300,6 +326,10 @@ FROM Sales.Customer;</property>
                           dataType="str"
                           length="10"
                           name="AccountNumber" />
+                        <externalMetadataColumn
+                          refId="Package\Load Customer\DFT Customer\Staging dbo_Customer.Inputs[OLE DB Destination Input].ExternalColumns[PersonID]"
+                          dataType="i4"
+                          name="PersonID" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -1747,7 +1777,7 @@ WHERE OrderDate &gt;= ? AND OrderDate &lt;= ?;</property>
           DTS:LocaleID="-1"
           DTS:ObjectName="Log Inc Load Start"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="3">
+          DTS:ThreadHint="4">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -1863,7 +1893,7 @@ WHERE OrderDate &gt;= ? AND OrderDate &lt;= ?;</property>
           DTS:LocaleID="-1"
           DTS:ObjectName="pre-load Sales Orders"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="4">
+          DTS:ThreadHint="3">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -1987,9 +2017,9 @@ WHERE OrderDate &gt;= ? AND OrderDate &lt;= ?;</property>
         </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
-          IsExpanded="False"
+          IsExpanded="True"
           PanelSize="278,300"
-          Size="173,43"
+          Size="278,343"
           Id="Package\Load Customer"
           TopLeft="21,23" />
         <NodeLayout
@@ -2127,17 +2157,29 @@ WHERE OrderDate &gt;= ? AND OrderDate &lt;= ?;</property>
           Id="Package\Load Person"
           TopLeft="331,27" />
         <NodeLayout
+          Size="161,42"
+          Id="Package\Load Sales Orders\DFT Sales Orders"
+          TopLeft="160,131" />
+        <NodeLayout
           Size="166,42"
           Id="Package\Load Sales Orders\Log Inc Load Start"
           TopLeft="41,29" />
         <NodeLayout
+          Size="189,42"
+          Id="Package\Load Sales Orders\Log Inc LoadEnd Failed"
+          TopLeft="267,212" />
+        <NodeLayout
+          Size="210,42"
+          Id="Package\Load Sales Orders\Log Inc LoadEnd Successful"
+          TopLeft="37,207" />
+        <NodeLayout
+          Size="185,42"
+          Id="Package\Load Sales Orders\post-load Sales Orders"
+          TopLeft="149,297" />
+        <NodeLayout
           Size="180,42"
           Id="Package\Load Sales Orders\pre-load Sales Orders"
           TopLeft="255,28" />
-        <NodeLayout
-          Size="161,42"
-          Id="Package\Load Sales Orders\DFT Sales Orders"
-          TopLeft="160,131" />
         <EdgeLayout
           Id="Package\Load Sales Orders.PrecedenceConstraints[Constraint]"
           TopLeft="124,71">
@@ -2169,7 +2211,9 @@ WHERE OrderDate &gt;= ? AND OrderDate &lt;= ?;</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -2203,17 +2247,11 @@ WHERE OrderDate &gt;= ? AND OrderDate &lt;= ?;</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="185,42"
-          Id="Package\Load Sales Orders\post-load Sales Orders"
-          TopLeft="149,297" />
-        <NodeLayout
-          Size="210,42"
-          Id="Package\Load Sales Orders\Log Inc LoadEnd Successful"
-          TopLeft="37,207" />
         <EdgeLayout
           Id="Package\Load Sales Orders.PrecedenceConstraints[Constraint 2]"
           TopLeft="240.5,173">
@@ -2245,7 +2283,9 @@ WHERE OrderDate &gt;= ? AND OrderDate &lt;= ?;</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -2279,13 +2319,11 @@ WHERE OrderDate &gt;= ? AND OrderDate &lt;= ?;</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="189,42"
-          Id="Package\Load Sales Orders\Log Inc LoadEnd Failed"
-          TopLeft="267,212" />
         <EdgeLayout
           Id="Package\Load Sales Orders.PrecedenceConstraints[Constraint 4]"
           TopLeft="266,173">
@@ -2336,7 +2374,7 @@ WHERE OrderDate &gt;= ? AND OrderDate &lt;= ?;</property>
     design-time-name="Package\Load Customer\DFT Customer">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="186,42"
           Id="Package\Load Customer\DFT Customer\Staging dbo_Customer"
@@ -2364,9 +2402,7 @@ WHERE OrderDate &gt;= ? AND OrderDate &lt;= ?;</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

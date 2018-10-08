@@ -73,4 +73,10 @@
     <Build Include="Schemas\dbo\Schema Objects\Tables\DimSalesPerson.sql" />
     <Build Include="Schemas\dbo\Schema Objects\Tables\FactSalesOrders.sql" />
   </ItemGroup>
+  <ItemGroup>
+    <SqlCmdVariable Include="StagingDatabaseName">
+      <DefaultValue>StagingDB</DefaultValue>
+      <Value>$(SqlCmdVar__1)</Value>
+    </SqlCmdVariable>
+  </ItemGroup>
 </Project>

@@ -1,0 +1,10 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="StagingDB_ADONET"
+  DTS:DTSID="{76139998-2EEC-4DEE-ABD0-16AC4D52D1B9}"
+  DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=EPRUPETW1813\MSSQL2017MD;Initial Catalog=StagingDB;Integrated Security=True;Application Name=SSIS-SSIS Packages-{76139998-2EEC-4DEE-ABD0-16AC4D52D1B9}EPRUPETW1813\MSSQL2017MD.StagingDB1;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

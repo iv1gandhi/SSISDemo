@@ -2,7 +2,7 @@
 (
     CustomerKey     INT IDENTITY,
     CustomerID      INT NOT NULL,
-    AccountNumber   NVARCHAR(50),
+    AccountNumber   VARCHAR(50),
     Name            NVARCHAR(100),
     CONSTRAINT PK_DimCustomer PRIMARY KEY CLUSTERED (CustomerKey),
 )
