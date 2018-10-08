@@ -7,15 +7,43 @@
   DTS:CreatorName="PETERSBURG\Ivan_Khokhlachev"
   DTS:DTSID="{2D448499-3E5C-45D2-B097-E353A2BDA5C7}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="14.0.0800.98"
+  DTS:LastModifiedProductVersion="15.0.0900.30"
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="7"
-  DTS:VersionGUID="{EBB64E83-DF7B-4F52-913E-0A22F6CC801A}">
+  DTS:VersionBuild="64"
+  DTS:VersionGUID="{1AA549DD-02AB-4B54-B324-5395EBC2F505}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
-  <DTS:Variables />
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{CDD5BBCE-90ED-4546-81BB-040D9657EF8B}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="ExecutionID">
+      <DTS:VariableValue
+        DTS:DataType="8">""</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{1574EDA4-663D-4653-B1A7-D1A8A8943998}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="FactEndDate">
+      <DTS:VariableValue
+        DTS:DataType="7">1/1/2099</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{2626CF6A-36E9-4821-8CE6-7BBE2C4ED1DF}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="FactStartDate">
+      <DTS:VariableValue
+        DTS:DataType="7">1/1/1999</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
   <DTS:Executables>
     <DTS:Executable
       DTS:refId="Package\Load Customer"
@@ -42,11 +70,11 @@
               version="1">
               <components>
                 <component
-                  refId="Package\Load Customer\DFT Customer\AdWorkd Sales_Customer"
+                  refId="Package\Load Customer\DFT Customer\AdWorks Sales_Customer"
                   componentClassID="Microsoft.OLEDBSource"
                   contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
                   description="OLE DB Source"
-                  name="AdWorkd Sales_Customer"
+                  name="AdWorks Sales_Customer"
                   usesDispositions="true"
                   version="7">
                   <properties>
@@ -66,7 +94,7 @@
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT CustomerID,
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT CustomerID,
     AccountNumber
 FROM Sales.Customer;</property>
                     <property
@@ -93,7 +121,7 @@ FROM Sales.Customer;</property>
                   </properties>
                   <connections>
                     <connection
-                      refId="Package\Load Customer\DFT Customer\AdWorkd Sales_Customer.Connections[OleDbConnection]"
+                      refId="Package\Load Customer\DFT Customer\AdWorks Sales_Customer.Connections[OleDbConnection]"
                       connectionManagerID="{459820CA-204E-4FD0-B756-A6635D6292CF}:external"
                       connectionManagerRefId="Project.ConnectionManagers[AdventureWorks2016]"
                       description="The OLE DB runtime connection used to access the database."
@@ -101,38 +129,38 @@ FROM Sales.Customer;</property>
                   </connections>
                   <outputs>
                     <output
-                      refId="Package\Load Customer\DFT Customer\AdWorkd Sales_Customer.Outputs[OLE DB Source Output]"
+                      refId="Package\Load Customer\DFT Customer\AdWorks Sales_Customer.Outputs[OLE DB Source Output]"
                       name="OLE DB Source Output">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Load Customer\DFT Customer\AdWorkd Sales_Customer.Outputs[OLE DB Source Output].Columns[CustomerID]"
+                          refId="Package\Load Customer\DFT Customer\AdWorks Sales_Customer.Outputs[OLE DB Source Output].Columns[CustomerID]"
                           dataType="i4"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Load Customer\DFT Customer\AdWorkd Sales_Customer.Outputs[OLE DB Source Output].ExternalColumns[CustomerID]"
-                          lineageId="Package\Load Customer\DFT Customer\AdWorkd Sales_Customer.Outputs[OLE DB Source Output].Columns[CustomerID]"
+                          externalMetadataColumnId="Package\Load Customer\DFT Customer\AdWorks Sales_Customer.Outputs[OLE DB Source Output].ExternalColumns[CustomerID]"
+                          lineageId="Package\Load Customer\DFT Customer\AdWorks Sales_Customer.Outputs[OLE DB Source Output].Columns[CustomerID]"
                           name="CustomerID"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Load Customer\DFT Customer\AdWorkd Sales_Customer.Outputs[OLE DB Source Output].Columns[AccountNumber]"
+                          refId="Package\Load Customer\DFT Customer\AdWorks Sales_Customer.Outputs[OLE DB Source Output].Columns[AccountNumber]"
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Load Customer\DFT Customer\AdWorkd Sales_Customer.Outputs[OLE DB Source Output].ExternalColumns[AccountNumber]"
+                          externalMetadataColumnId="Package\Load Customer\DFT Customer\AdWorks Sales_Customer.Outputs[OLE DB Source Output].ExternalColumns[AccountNumber]"
                           length="10"
-                          lineageId="Package\Load Customer\DFT Customer\AdWorkd Sales_Customer.Outputs[OLE DB Source Output].Columns[AccountNumber]"
+                          lineageId="Package\Load Customer\DFT Customer\AdWorks Sales_Customer.Outputs[OLE DB Source Output].Columns[AccountNumber]"
                           name="AccountNumber"
                           truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\Load Customer\DFT Customer\AdWorkd Sales_Customer.Outputs[OLE DB Source Output].ExternalColumns[CustomerID]"
+                          refId="Package\Load Customer\DFT Customer\AdWorks Sales_Customer.Outputs[OLE DB Source Output].ExternalColumns[CustomerID]"
                           dataType="i4"
                           name="CustomerID" />
                         <externalMetadataColumn
-                          refId="Package\Load Customer\DFT Customer\AdWorkd Sales_Customer.Outputs[OLE DB Source Output].ExternalColumns[AccountNumber]"
+                          refId="Package\Load Customer\DFT Customer\AdWorks Sales_Customer.Outputs[OLE DB Source Output].ExternalColumns[AccountNumber]"
                           codePage="1252"
                           dataType="str"
                           length="10"
@@ -140,33 +168,33 @@ FROM Sales.Customer;</property>
                       </externalMetadataColumns>
                     </output>
                     <output
-                      refId="Package\Load Customer\DFT Customer\AdWorkd Sales_Customer.Outputs[OLE DB Source Error Output]"
+                      refId="Package\Load Customer\DFT Customer\AdWorks Sales_Customer.Outputs[OLE DB Source Error Output]"
                       isErrorOut="true"
                       name="OLE DB Source Error Output">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Load Customer\DFT Customer\AdWorkd Sales_Customer.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          refId="Package\Load Customer\DFT Customer\AdWorks Sales_Customer.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\Load Customer\DFT Customer\AdWorkd Sales_Customer.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          lineageId="Package\Load Customer\DFT Customer\AdWorks Sales_Customer.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\Load Customer\DFT Customer\AdWorkd Sales_Customer.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          refId="Package\Load Customer\DFT Customer\AdWorks Sales_Customer.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\Load Customer\DFT Customer\AdWorkd Sales_Customer.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\Load Customer\DFT Customer\AdWorks Sales_Customer.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                         <outputColumn
-                          refId="Package\Load Customer\DFT Customer\AdWorkd Sales_Customer.Outputs[OLE DB Source Error Output].Columns[CustomerID]"
+                          refId="Package\Load Customer\DFT Customer\AdWorks Sales_Customer.Outputs[OLE DB Source Error Output].Columns[CustomerID]"
                           dataType="i4"
-                          lineageId="Package\Load Customer\DFT Customer\AdWorkd Sales_Customer.Outputs[OLE DB Source Error Output].Columns[CustomerID]"
+                          lineageId="Package\Load Customer\DFT Customer\AdWorks Sales_Customer.Outputs[OLE DB Source Error Output].Columns[CustomerID]"
                           name="CustomerID" />
                         <outputColumn
-                          refId="Package\Load Customer\DFT Customer\AdWorkd Sales_Customer.Outputs[OLE DB Source Error Output].Columns[AccountNumber]"
+                          refId="Package\Load Customer\DFT Customer\AdWorks Sales_Customer.Outputs[OLE DB Source Error Output].Columns[AccountNumber]"
                           codePage="1252"
                           dataType="str"
                           length="10"
-                          lineageId="Package\Load Customer\DFT Customer\AdWorkd Sales_Customer.Outputs[OLE DB Source Error Output].Columns[AccountNumber]"
+                          lineageId="Package\Load Customer\DFT Customer\AdWorks Sales_Customer.Outputs[OLE DB Source Error Output].Columns[AccountNumber]"
                           name="AccountNumber" />
                       </outputColumns>
                       <externalMetadataColumns />
@@ -198,7 +226,7 @@ FROM Sales.Customer;</property>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -233,7 +261,7 @@ FROM Sales.Customer;</property>
                     <connection
                       refId="Package\Load Customer\DFT Customer\Staging dbo_Customer.Connections[OleDbConnection]"
                       connectionManagerID="{9B5D6336-6C59-41D4-9308-3D490A49353E}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[StagingDB]"
+                      connectionManagerRefId="Project.ConnectionManagers[StagingDB_OLEDB]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -250,7 +278,7 @@ FROM Sales.Customer;</property>
                           cachedDataType="i4"
                           cachedName="CustomerID"
                           externalMetadataColumnId="Package\Load Customer\DFT Customer\Staging dbo_Customer.Inputs[OLE DB Destination Input].ExternalColumns[CustomerID]"
-                          lineageId="Package\Load Customer\DFT Customer\AdWorkd Sales_Customer.Outputs[OLE DB Source Output].Columns[CustomerID]" />
+                          lineageId="Package\Load Customer\DFT Customer\AdWorks Sales_Customer.Outputs[OLE DB Source Output].Columns[CustomerID]" />
                         <inputColumn
                           refId="Package\Load Customer\DFT Customer\Staging dbo_Customer.Inputs[OLE DB Destination Input].Columns[AccountNumber]"
                           cachedCodepage="1252"
@@ -258,7 +286,7 @@ FROM Sales.Customer;</property>
                           cachedLength="10"
                           cachedName="AccountNumber"
                           externalMetadataColumnId="Package\Load Customer\DFT Customer\Staging dbo_Customer.Inputs[OLE DB Destination Input].ExternalColumns[AccountNumber]"
-                          lineageId="Package\Load Customer\DFT Customer\AdWorkd Sales_Customer.Outputs[OLE DB Source Output].Columns[AccountNumber]" />
+                          lineageId="Package\Load Customer\DFT Customer\AdWorks Sales_Customer.Outputs[OLE DB Source Output].Columns[AccountNumber]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -306,9 +334,26 @@ FROM Sales.Customer;</property>
                   refId="Package\Load Customer\DFT Customer.Paths[OLE DB Source Output]"
                   endId="Package\Load Customer\DFT Customer\Staging dbo_Customer.Inputs[OLE DB Destination Input]"
                   name="OLE DB Source Output"
-                  startId="Package\Load Customer\DFT Customer\AdWorkd Sales_Customer.Outputs[OLE DB Source Output]" />
+                  startId="Package\Load Customer\DFT Customer\AdWorks Sales_Customer.Outputs[OLE DB Source Output]" />
               </paths>
             </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Load Customer\post-load Customer"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{3CC69489-241E-434A-90AF-584687F892C8}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="post-load Customer"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{9B5D6336-6C59-41D4-9308-3D490A49353E}"
+              SQLTask:SqlStatementSource="ALTER TABLE dbo.Customer&#xA;    ADD CONSTRAINT PK_Customer PRIMARY KEY (CustomerID);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -324,7 +369,7 @@ FROM Sales.Customer;</property>
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{459820CA-204E-4FD0-B756-A6635D6292CF}"
+              SQLTask:Connection="{9B5D6336-6C59-41D4-9308-3D490A49353E}"
               SQLTask:SqlStatementSource="TRUNCATE TABLE dbo.Customer;&#xA;&#xA;ALTER TABLE dbo.Customer&#xA;DROP CONSTRAINT PK_Customer;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -338,6 +383,1537 @@ FROM Sales.Customer;</property>
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
           DTS:To="Package\Load Customer\DFT Customer" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Load Customer.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{A7C025A2-9EBC-46BE-B35C-63D0347B2373}"
+          DTS:From="Package\Load Customer\DFT Customer"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Load Customer\post-load Customer" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Load Employee"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{3f5b6321-06d4-46f3-81f0-3afe3cef4c34}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load Employee">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Load Employee\DFT Employee"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{b78e0b66-a844-4fda-9609-fbe4a556e0cd}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DFT Employee"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Load Employee\DFT Employee\AdWorks HR_Employee"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="AdWorks HR_Employee"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[Sales].[Customer]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT BusinessEntityID
+      ,NationalIDNumber
+      ,JobTitle
+      ,BirthDate
+      ,MaritalStatus
+      ,Gender
+      ,HireDate
+FROM HumanResources.Employee</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Load Employee\DFT Employee\AdWorks HR_Employee.Connections[OleDbConnection]"
+                      connectionManagerID="{459820CA-204E-4FD0-B756-A6635D6292CF}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[AdventureWorks2016]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Load Employee\DFT Employee\AdWorks HR_Employee.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load Employee\DFT Employee\AdWorks HR_Employee.Outputs[OLE DB Source Output].Columns[BusinessEntityID]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load Employee\DFT Employee\AdWorks HR_Employee.Outputs[OLE DB Source Output].ExternalColumns[BusinessEntityID]"
+                          lineageId="Package\Load Employee\DFT Employee\AdWorks HR_Employee.Outputs[OLE DB Source Output].Columns[BusinessEntityID]"
+                          name="BusinessEntityID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Load Employee\DFT Employee\AdWorks HR_Employee.Outputs[OLE DB Source Output].Columns[NationalIDNumber]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load Employee\DFT Employee\AdWorks HR_Employee.Outputs[OLE DB Source Output].ExternalColumns[NationalIDNumber]"
+                          length="15"
+                          lineageId="Package\Load Employee\DFT Employee\AdWorks HR_Employee.Outputs[OLE DB Source Output].Columns[NationalIDNumber]"
+                          name="NationalIDNumber"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Load Employee\DFT Employee\AdWorks HR_Employee.Outputs[OLE DB Source Output].Columns[JobTitle]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load Employee\DFT Employee\AdWorks HR_Employee.Outputs[OLE DB Source Output].ExternalColumns[JobTitle]"
+                          length="50"
+                          lineageId="Package\Load Employee\DFT Employee\AdWorks HR_Employee.Outputs[OLE DB Source Output].Columns[JobTitle]"
+                          name="JobTitle"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Load Employee\DFT Employee\AdWorks HR_Employee.Outputs[OLE DB Source Output].Columns[BirthDate]"
+                          dataType="dbDate"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load Employee\DFT Employee\AdWorks HR_Employee.Outputs[OLE DB Source Output].ExternalColumns[BirthDate]"
+                          lineageId="Package\Load Employee\DFT Employee\AdWorks HR_Employee.Outputs[OLE DB Source Output].Columns[BirthDate]"
+                          name="BirthDate"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Load Employee\DFT Employee\AdWorks HR_Employee.Outputs[OLE DB Source Output].Columns[MaritalStatus]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load Employee\DFT Employee\AdWorks HR_Employee.Outputs[OLE DB Source Output].ExternalColumns[MaritalStatus]"
+                          length="1"
+                          lineageId="Package\Load Employee\DFT Employee\AdWorks HR_Employee.Outputs[OLE DB Source Output].Columns[MaritalStatus]"
+                          name="MaritalStatus"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Load Employee\DFT Employee\AdWorks HR_Employee.Outputs[OLE DB Source Output].Columns[Gender]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load Employee\DFT Employee\AdWorks HR_Employee.Outputs[OLE DB Source Output].ExternalColumns[Gender]"
+                          length="1"
+                          lineageId="Package\Load Employee\DFT Employee\AdWorks HR_Employee.Outputs[OLE DB Source Output].Columns[Gender]"
+                          name="Gender"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Load Employee\DFT Employee\AdWorks HR_Employee.Outputs[OLE DB Source Output].Columns[HireDate]"
+                          dataType="dbDate"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load Employee\DFT Employee\AdWorks HR_Employee.Outputs[OLE DB Source Output].ExternalColumns[HireDate]"
+                          lineageId="Package\Load Employee\DFT Employee\AdWorks HR_Employee.Outputs[OLE DB Source Output].Columns[HireDate]"
+                          name="HireDate"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Load Employee\DFT Employee\AdWorks HR_Employee.Outputs[OLE DB Source Output].ExternalColumns[BusinessEntityID]"
+                          dataType="i4"
+                          name="BusinessEntityID" />
+                        <externalMetadataColumn
+                          refId="Package\Load Employee\DFT Employee\AdWorks HR_Employee.Outputs[OLE DB Source Output].ExternalColumns[NationalIDNumber]"
+                          dataType="wstr"
+                          length="15"
+                          name="NationalIDNumber" />
+                        <externalMetadataColumn
+                          refId="Package\Load Employee\DFT Employee\AdWorks HR_Employee.Outputs[OLE DB Source Output].ExternalColumns[JobTitle]"
+                          dataType="wstr"
+                          length="50"
+                          name="JobTitle" />
+                        <externalMetadataColumn
+                          refId="Package\Load Employee\DFT Employee\AdWorks HR_Employee.Outputs[OLE DB Source Output].ExternalColumns[BirthDate]"
+                          dataType="dbDate"
+                          name="BirthDate" />
+                        <externalMetadataColumn
+                          refId="Package\Load Employee\DFT Employee\AdWorks HR_Employee.Outputs[OLE DB Source Output].ExternalColumns[MaritalStatus]"
+                          dataType="wstr"
+                          length="1"
+                          name="MaritalStatus" />
+                        <externalMetadataColumn
+                          refId="Package\Load Employee\DFT Employee\AdWorks HR_Employee.Outputs[OLE DB Source Output].ExternalColumns[Gender]"
+                          dataType="wstr"
+                          length="1"
+                          name="Gender" />
+                        <externalMetadataColumn
+                          refId="Package\Load Employee\DFT Employee\AdWorks HR_Employee.Outputs[OLE DB Source Output].ExternalColumns[HireDate]"
+                          dataType="dbDate"
+                          name="HireDate" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Load Employee\DFT Employee\AdWorks HR_Employee.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load Employee\DFT Employee\AdWorks HR_Employee.Outputs[OLE DB Source Error Output].Columns[BusinessEntityID]"
+                          dataType="i4"
+                          lineageId="Package\Load Employee\DFT Employee\AdWorks HR_Employee.Outputs[OLE DB Source Error Output].Columns[BusinessEntityID]"
+                          name="BusinessEntityID" />
+                        <outputColumn
+                          refId="Package\Load Employee\DFT Employee\AdWorks HR_Employee.Outputs[OLE DB Source Error Output].Columns[NationalIDNumber]"
+                          dataType="wstr"
+                          length="15"
+                          lineageId="Package\Load Employee\DFT Employee\AdWorks HR_Employee.Outputs[OLE DB Source Error Output].Columns[NationalIDNumber]"
+                          name="NationalIDNumber" />
+                        <outputColumn
+                          refId="Package\Load Employee\DFT Employee\AdWorks HR_Employee.Outputs[OLE DB Source Error Output].Columns[JobTitle]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\Load Employee\DFT Employee\AdWorks HR_Employee.Outputs[OLE DB Source Error Output].Columns[JobTitle]"
+                          name="JobTitle" />
+                        <outputColumn
+                          refId="Package\Load Employee\DFT Employee\AdWorks HR_Employee.Outputs[OLE DB Source Error Output].Columns[BirthDate]"
+                          dataType="dbDate"
+                          lineageId="Package\Load Employee\DFT Employee\AdWorks HR_Employee.Outputs[OLE DB Source Error Output].Columns[BirthDate]"
+                          name="BirthDate" />
+                        <outputColumn
+                          refId="Package\Load Employee\DFT Employee\AdWorks HR_Employee.Outputs[OLE DB Source Error Output].Columns[MaritalStatus]"
+                          dataType="wstr"
+                          length="1"
+                          lineageId="Package\Load Employee\DFT Employee\AdWorks HR_Employee.Outputs[OLE DB Source Error Output].Columns[MaritalStatus]"
+                          name="MaritalStatus" />
+                        <outputColumn
+                          refId="Package\Load Employee\DFT Employee\AdWorks HR_Employee.Outputs[OLE DB Source Error Output].Columns[Gender]"
+                          dataType="wstr"
+                          length="1"
+                          lineageId="Package\Load Employee\DFT Employee\AdWorks HR_Employee.Outputs[OLE DB Source Error Output].Columns[Gender]"
+                          name="Gender" />
+                        <outputColumn
+                          refId="Package\Load Employee\DFT Employee\AdWorks HR_Employee.Outputs[OLE DB Source Error Output].Columns[HireDate]"
+                          dataType="dbDate"
+                          lineageId="Package\Load Employee\DFT Employee\AdWorks HR_Employee.Outputs[OLE DB Source Error Output].Columns[HireDate]"
+                          name="HireDate" />
+                        <outputColumn
+                          refId="Package\Load Employee\DFT Employee\AdWorks HR_Employee.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Load Employee\DFT Employee\AdWorks HR_Employee.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Load Employee\DFT Employee\AdWorks HR_Employee.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Load Employee\DFT Employee\AdWorks HR_Employee.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Load Employee\DFT Employee\Staging dbo_Employee"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="Staging dbo_Employee"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[Employee]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,ROWS_PER_BATCH = 20000</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Load Employee\DFT Employee\Staging dbo_Employee.Connections[OleDbConnection]"
+                      connectionManagerID="{9B5D6336-6C59-41D4-9308-3D490A49353E}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[StagingDB_OLEDB]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Load Employee\DFT Employee\Staging dbo_Employee.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Load Employee\DFT Employee\Staging dbo_Employee.Inputs[OLE DB Destination Input].Columns[BusinessEntityID]"
+                          cachedDataType="i4"
+                          cachedName="BusinessEntityID"
+                          externalMetadataColumnId="Package\Load Employee\DFT Employee\Staging dbo_Employee.Inputs[OLE DB Destination Input].ExternalColumns[BusinessEntityID]"
+                          lineageId="Package\Load Employee\DFT Employee\AdWorks HR_Employee.Outputs[OLE DB Source Output].Columns[BusinessEntityID]" />
+                        <inputColumn
+                          refId="Package\Load Employee\DFT Employee\Staging dbo_Employee.Inputs[OLE DB Destination Input].Columns[NationalIDNumber]"
+                          cachedDataType="wstr"
+                          cachedLength="15"
+                          cachedName="NationalIDNumber"
+                          externalMetadataColumnId="Package\Load Employee\DFT Employee\Staging dbo_Employee.Inputs[OLE DB Destination Input].ExternalColumns[NationalIDNumber]"
+                          lineageId="Package\Load Employee\DFT Employee\AdWorks HR_Employee.Outputs[OLE DB Source Output].Columns[NationalIDNumber]" />
+                        <inputColumn
+                          refId="Package\Load Employee\DFT Employee\Staging dbo_Employee.Inputs[OLE DB Destination Input].Columns[JobTitle]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="JobTitle"
+                          externalMetadataColumnId="Package\Load Employee\DFT Employee\Staging dbo_Employee.Inputs[OLE DB Destination Input].ExternalColumns[JobTitle]"
+                          lineageId="Package\Load Employee\DFT Employee\AdWorks HR_Employee.Outputs[OLE DB Source Output].Columns[JobTitle]" />
+                        <inputColumn
+                          refId="Package\Load Employee\DFT Employee\Staging dbo_Employee.Inputs[OLE DB Destination Input].Columns[BirthDate]"
+                          cachedDataType="dbDate"
+                          cachedName="BirthDate"
+                          externalMetadataColumnId="Package\Load Employee\DFT Employee\Staging dbo_Employee.Inputs[OLE DB Destination Input].ExternalColumns[BirthDate]"
+                          lineageId="Package\Load Employee\DFT Employee\AdWorks HR_Employee.Outputs[OLE DB Source Output].Columns[BirthDate]" />
+                        <inputColumn
+                          refId="Package\Load Employee\DFT Employee\Staging dbo_Employee.Inputs[OLE DB Destination Input].Columns[MaritalStatus]"
+                          cachedDataType="wstr"
+                          cachedLength="1"
+                          cachedName="MaritalStatus"
+                          externalMetadataColumnId="Package\Load Employee\DFT Employee\Staging dbo_Employee.Inputs[OLE DB Destination Input].ExternalColumns[MaritalStatus]"
+                          lineageId="Package\Load Employee\DFT Employee\AdWorks HR_Employee.Outputs[OLE DB Source Output].Columns[MaritalStatus]" />
+                        <inputColumn
+                          refId="Package\Load Employee\DFT Employee\Staging dbo_Employee.Inputs[OLE DB Destination Input].Columns[Gender]"
+                          cachedDataType="wstr"
+                          cachedLength="1"
+                          cachedName="Gender"
+                          externalMetadataColumnId="Package\Load Employee\DFT Employee\Staging dbo_Employee.Inputs[OLE DB Destination Input].ExternalColumns[Gender]"
+                          lineageId="Package\Load Employee\DFT Employee\AdWorks HR_Employee.Outputs[OLE DB Source Output].Columns[Gender]" />
+                        <inputColumn
+                          refId="Package\Load Employee\DFT Employee\Staging dbo_Employee.Inputs[OLE DB Destination Input].Columns[HireDate]"
+                          cachedDataType="dbDate"
+                          cachedName="HireDate"
+                          externalMetadataColumnId="Package\Load Employee\DFT Employee\Staging dbo_Employee.Inputs[OLE DB Destination Input].ExternalColumns[HireDate]"
+                          lineageId="Package\Load Employee\DFT Employee\AdWorks HR_Employee.Outputs[OLE DB Source Output].Columns[HireDate]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Load Employee\DFT Employee\Staging dbo_Employee.Inputs[OLE DB Destination Input].ExternalColumns[BusinessEntityID]"
+                          dataType="i4"
+                          name="BusinessEntityID" />
+                        <externalMetadataColumn
+                          refId="Package\Load Employee\DFT Employee\Staging dbo_Employee.Inputs[OLE DB Destination Input].ExternalColumns[NationalIDNumber]"
+                          dataType="wstr"
+                          length="15"
+                          name="NationalIDNumber" />
+                        <externalMetadataColumn
+                          refId="Package\Load Employee\DFT Employee\Staging dbo_Employee.Inputs[OLE DB Destination Input].ExternalColumns[JobTitle]"
+                          dataType="wstr"
+                          length="50"
+                          name="JobTitle" />
+                        <externalMetadataColumn
+                          refId="Package\Load Employee\DFT Employee\Staging dbo_Employee.Inputs[OLE DB Destination Input].ExternalColumns[BirthDate]"
+                          dataType="dbDate"
+                          name="BirthDate" />
+                        <externalMetadataColumn
+                          refId="Package\Load Employee\DFT Employee\Staging dbo_Employee.Inputs[OLE DB Destination Input].ExternalColumns[MaritalStatus]"
+                          dataType="wstr"
+                          length="1"
+                          name="MaritalStatus" />
+                        <externalMetadataColumn
+                          refId="Package\Load Employee\DFT Employee\Staging dbo_Employee.Inputs[OLE DB Destination Input].ExternalColumns[Gender]"
+                          dataType="wstr"
+                          length="1"
+                          name="Gender" />
+                        <externalMetadataColumn
+                          refId="Package\Load Employee\DFT Employee\Staging dbo_Employee.Inputs[OLE DB Destination Input].ExternalColumns[HireDate]"
+                          dataType="dbDate"
+                          name="HireDate" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Load Employee\DFT Employee\Staging dbo_Employee.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Load Employee\DFT Employee\Staging dbo_Employee.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load Employee\DFT Employee\Staging dbo_Employee.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Load Employee\DFT Employee\Staging dbo_Employee.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Load Employee\DFT Employee\Staging dbo_Employee.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Load Employee\DFT Employee\Staging dbo_Employee.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Load Employee\DFT Employee.Paths[OLE DB Source Output]"
+                  endId="Package\Load Employee\DFT Employee\Staging dbo_Employee.Inputs[OLE DB Destination Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\Load Employee\DFT Employee\AdWorks HR_Employee.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Load Employee\post-load Employee"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{04dd248a-caef-4f05-bf7b-3757e4feed69}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="post-load Employee"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{9B5D6336-6C59-41D4-9308-3D490A49353E}"
+              SQLTask:SqlStatementSource="ALTER TABLE dbo.Employee&#xA;    ADD CONSTRAINT PK_Employee PRIMARY KEY (BusinessEntityID);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Load Employee\pre-load Employee"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{5627da8c-47a7-41c0-a43d-44740ac1ffee}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="pre-load Employee"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{9B5D6336-6C59-41D4-9308-3D490A49353E}"
+              SQLTask:SqlStatementSource="TRUNCATE TABLE dbo.Employee;&#xA;&#xA;ALTER TABLE dbo.Employee&#xA;DROP CONSTRAINT PK_Employee;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Load Employee.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{8585ed0f-bdd6-4777-8576-ebe9747c1c9a}"
+          DTS:From="Package\Load Employee\pre-load Employee"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Load Employee\DFT Employee" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Load Employee.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{a6da1bef-c15b-4737-bd79-9e38652c0dcf}"
+          DTS:From="Package\Load Employee\DFT Employee"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Load Employee\post-load Employee" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Load Person"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{88F2CB10-CB7B-4783-BC6B-20B8ADB39388}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load Person">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Load Person\DFT Person"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{578ec5f6-6e29-41d6-a9e3-24c2b8e4eaa6}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DFT Person"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Load Person\DFT Person\AdWorks Person_Person"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="AdWorks Person_Person"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[Sales].[Customer]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT
+    BusinessEntityID,
+    FirstName,
+    LastName
+FROM Person.Person;</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Load Person\DFT Person\AdWorks Person_Person.Connections[OleDbConnection]"
+                      connectionManagerID="{459820CA-204E-4FD0-B756-A6635D6292CF}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[AdventureWorks2016]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Load Person\DFT Person\AdWorks Person_Person.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load Person\DFT Person\AdWorks Person_Person.Outputs[OLE DB Source Output].Columns[BusinessEntityID]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load Person\DFT Person\AdWorks Person_Person.Outputs[OLE DB Source Output].ExternalColumns[BusinessEntityID]"
+                          lineageId="Package\Load Person\DFT Person\AdWorks Person_Person.Outputs[OLE DB Source Output].Columns[BusinessEntityID]"
+                          name="BusinessEntityID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Load Person\DFT Person\AdWorks Person_Person.Outputs[OLE DB Source Output].Columns[FirstName]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load Person\DFT Person\AdWorks Person_Person.Outputs[OLE DB Source Output].ExternalColumns[FirstName]"
+                          length="50"
+                          lineageId="Package\Load Person\DFT Person\AdWorks Person_Person.Outputs[OLE DB Source Output].Columns[FirstName]"
+                          name="FirstName"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Load Person\DFT Person\AdWorks Person_Person.Outputs[OLE DB Source Output].Columns[LastName]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load Person\DFT Person\AdWorks Person_Person.Outputs[OLE DB Source Output].ExternalColumns[LastName]"
+                          length="50"
+                          lineageId="Package\Load Person\DFT Person\AdWorks Person_Person.Outputs[OLE DB Source Output].Columns[LastName]"
+                          name="LastName"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Load Person\DFT Person\AdWorks Person_Person.Outputs[OLE DB Source Output].ExternalColumns[BusinessEntityID]"
+                          dataType="i4"
+                          name="BusinessEntityID" />
+                        <externalMetadataColumn
+                          refId="Package\Load Person\DFT Person\AdWorks Person_Person.Outputs[OLE DB Source Output].ExternalColumns[FirstName]"
+                          dataType="wstr"
+                          length="50"
+                          name="FirstName" />
+                        <externalMetadataColumn
+                          refId="Package\Load Person\DFT Person\AdWorks Person_Person.Outputs[OLE DB Source Output].ExternalColumns[LastName]"
+                          dataType="wstr"
+                          length="50"
+                          name="LastName" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Load Person\DFT Person\AdWorks Person_Person.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load Person\DFT Person\AdWorks Person_Person.Outputs[OLE DB Source Error Output].Columns[BusinessEntityID]"
+                          dataType="i4"
+                          lineageId="Package\Load Person\DFT Person\AdWorks Person_Person.Outputs[OLE DB Source Error Output].Columns[BusinessEntityID]"
+                          name="BusinessEntityID" />
+                        <outputColumn
+                          refId="Package\Load Person\DFT Person\AdWorks Person_Person.Outputs[OLE DB Source Error Output].Columns[FirstName]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\Load Person\DFT Person\AdWorks Person_Person.Outputs[OLE DB Source Error Output].Columns[FirstName]"
+                          name="FirstName" />
+                        <outputColumn
+                          refId="Package\Load Person\DFT Person\AdWorks Person_Person.Outputs[OLE DB Source Error Output].Columns[LastName]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\Load Person\DFT Person\AdWorks Person_Person.Outputs[OLE DB Source Error Output].Columns[LastName]"
+                          name="LastName" />
+                        <outputColumn
+                          refId="Package\Load Person\DFT Person\AdWorks Person_Person.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Load Person\DFT Person\AdWorks Person_Person.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Load Person\DFT Person\AdWorks Person_Person.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Load Person\DFT Person\AdWorks Person_Person.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Load Person\DFT Person\Staging dbo_Person"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="Staging dbo_Person"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[Person]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,ROWS_PER_BATCH = 20000</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Load Person\DFT Person\Staging dbo_Person.Connections[OleDbConnection]"
+                      connectionManagerID="{9B5D6336-6C59-41D4-9308-3D490A49353E}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[StagingDB_OLEDB]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Load Person\DFT Person\Staging dbo_Person.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Load Person\DFT Person\Staging dbo_Person.Inputs[OLE DB Destination Input].Columns[BusinessEntityID]"
+                          cachedDataType="i4"
+                          cachedName="BusinessEntityID"
+                          externalMetadataColumnId="Package\Load Person\DFT Person\Staging dbo_Person.Inputs[OLE DB Destination Input].ExternalColumns[BusinessEntityID]"
+                          lineageId="Package\Load Person\DFT Person\AdWorks Person_Person.Outputs[OLE DB Source Output].Columns[BusinessEntityID]" />
+                        <inputColumn
+                          refId="Package\Load Person\DFT Person\Staging dbo_Person.Inputs[OLE DB Destination Input].Columns[FirstName]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="FirstName"
+                          externalMetadataColumnId="Package\Load Person\DFT Person\Staging dbo_Person.Inputs[OLE DB Destination Input].ExternalColumns[FirstName]"
+                          lineageId="Package\Load Person\DFT Person\AdWorks Person_Person.Outputs[OLE DB Source Output].Columns[FirstName]" />
+                        <inputColumn
+                          refId="Package\Load Person\DFT Person\Staging dbo_Person.Inputs[OLE DB Destination Input].Columns[LastName]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="LastName"
+                          externalMetadataColumnId="Package\Load Person\DFT Person\Staging dbo_Person.Inputs[OLE DB Destination Input].ExternalColumns[LastName]"
+                          lineageId="Package\Load Person\DFT Person\AdWorks Person_Person.Outputs[OLE DB Source Output].Columns[LastName]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Load Person\DFT Person\Staging dbo_Person.Inputs[OLE DB Destination Input].ExternalColumns[BusinessEntityID]"
+                          dataType="i4"
+                          name="BusinessEntityID" />
+                        <externalMetadataColumn
+                          refId="Package\Load Person\DFT Person\Staging dbo_Person.Inputs[OLE DB Destination Input].ExternalColumns[FirstName]"
+                          dataType="wstr"
+                          length="50"
+                          name="FirstName" />
+                        <externalMetadataColumn
+                          refId="Package\Load Person\DFT Person\Staging dbo_Person.Inputs[OLE DB Destination Input].ExternalColumns[LastName]"
+                          dataType="wstr"
+                          length="50"
+                          name="LastName" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Load Person\DFT Person\Staging dbo_Person.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Load Person\DFT Person\Staging dbo_Person.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load Person\DFT Person\Staging dbo_Person.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Load Person\DFT Person\Staging dbo_Person.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Load Person\DFT Person\Staging dbo_Person.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Load Person\DFT Person\Staging dbo_Person.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Load Person\DFT Person.Paths[OLE DB Source Output]"
+                  endId="Package\Load Person\DFT Person\Staging dbo_Person.Inputs[OLE DB Destination Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\Load Person\DFT Person\AdWorks Person_Person.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Load Person\post-load Person"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{45c940b0-85ec-4b60-b7b2-3f1f8a98d950}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="post-load Person"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="2">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{9B5D6336-6C59-41D4-9308-3D490A49353E}"
+              SQLTask:SqlStatementSource="ALTER TABLE dbo.Person&#xA;    ADD CONSTRAINT PK_Person PRIMARY KEY (BusinessEntityID);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Load Person\pre-load Person"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{13da6535-2281-4f78-938d-ef9abe176d5a}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="pre-load Person"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="2">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{9B5D6336-6C59-41D4-9308-3D490A49353E}"
+              SQLTask:SqlStatementSource="TRUNCATE TABLE dbo.Person;&#xA;&#xA;ALTER TABLE dbo.Person&#xA;DROP CONSTRAINT PK_Person;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Load Person.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{EA6803A6-F23E-4AD6-BCC1-4FBB54B5F178}"
+          DTS:From="Package\Load Person\pre-load Person"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Load Person\DFT Person" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Load Person.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{B318A85F-3173-4CFA-8B40-76BA4725AA34}"
+          DTS:From="Package\Load Person\DFT Person"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Load Person\post-load Person" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Load Sales Orders"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{A6638160-A52F-4AEA-AF7E-CAAB839BAB21}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load Sales Orders">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Load Sales Orders\DFT Sales Orders"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{3877EF24-BF1C-4A00-B74D-268B36634581}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DFT Sales Orders"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Load Sales Orders\DFT Sales Orders\AdWords SalesOrders"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="AdWords SalesOrders"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT SalesOrderID
+      ,OrderDate
+      ,SalesOrderNumber
+      ,CustomerID
+      ,SalesPersonID
+      ,SubTotal
+      ,TaxAmt
+      ,Freight
+FROM Sales.SalesOrderHeader
+WHERE OrderDate &gt;= ? AND OrderDate &lt;= ?;</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping">"Parameter0:Input",{2626CF6A-36E9-4821-8CE6-7BBE2C4ED1DF};"Parameter1:Input",{1574EDA4-663D-4653-B1A7-D1A8A8943998};</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Load Sales Orders\DFT Sales Orders\AdWords SalesOrders.Connections[OleDbConnection]"
+                      connectionManagerID="{459820CA-204E-4FD0-B756-A6635D6292CF}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[AdventureWorks2016]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Load Sales Orders\DFT Sales Orders\AdWords SalesOrders.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load Sales Orders\DFT Sales Orders\AdWords SalesOrders.Outputs[OLE DB Source Output].Columns[SalesOrderID]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load Sales Orders\DFT Sales Orders\AdWords SalesOrders.Outputs[OLE DB Source Output].ExternalColumns[SalesOrderID]"
+                          lineageId="Package\Load Sales Orders\DFT Sales Orders\AdWords SalesOrders.Outputs[OLE DB Source Output].Columns[SalesOrderID]"
+                          name="SalesOrderID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Load Sales Orders\DFT Sales Orders\AdWords SalesOrders.Outputs[OLE DB Source Output].Columns[OrderDate]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load Sales Orders\DFT Sales Orders\AdWords SalesOrders.Outputs[OLE DB Source Output].ExternalColumns[OrderDate]"
+                          lineageId="Package\Load Sales Orders\DFT Sales Orders\AdWords SalesOrders.Outputs[OLE DB Source Output].Columns[OrderDate]"
+                          name="OrderDate"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Load Sales Orders\DFT Sales Orders\AdWords SalesOrders.Outputs[OLE DB Source Output].Columns[SalesOrderNumber]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load Sales Orders\DFT Sales Orders\AdWords SalesOrders.Outputs[OLE DB Source Output].ExternalColumns[SalesOrderNumber]"
+                          length="25"
+                          lineageId="Package\Load Sales Orders\DFT Sales Orders\AdWords SalesOrders.Outputs[OLE DB Source Output].Columns[SalesOrderNumber]"
+                          name="SalesOrderNumber"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Load Sales Orders\DFT Sales Orders\AdWords SalesOrders.Outputs[OLE DB Source Output].Columns[CustomerID]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load Sales Orders\DFT Sales Orders\AdWords SalesOrders.Outputs[OLE DB Source Output].ExternalColumns[CustomerID]"
+                          lineageId="Package\Load Sales Orders\DFT Sales Orders\AdWords SalesOrders.Outputs[OLE DB Source Output].Columns[CustomerID]"
+                          name="CustomerID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Load Sales Orders\DFT Sales Orders\AdWords SalesOrders.Outputs[OLE DB Source Output].Columns[SalesPersonID]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load Sales Orders\DFT Sales Orders\AdWords SalesOrders.Outputs[OLE DB Source Output].ExternalColumns[SalesPersonID]"
+                          lineageId="Package\Load Sales Orders\DFT Sales Orders\AdWords SalesOrders.Outputs[OLE DB Source Output].Columns[SalesPersonID]"
+                          name="SalesPersonID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Load Sales Orders\DFT Sales Orders\AdWords SalesOrders.Outputs[OLE DB Source Output].Columns[SubTotal]"
+                          dataType="cy"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load Sales Orders\DFT Sales Orders\AdWords SalesOrders.Outputs[OLE DB Source Output].ExternalColumns[SubTotal]"
+                          lineageId="Package\Load Sales Orders\DFT Sales Orders\AdWords SalesOrders.Outputs[OLE DB Source Output].Columns[SubTotal]"
+                          name="SubTotal"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Load Sales Orders\DFT Sales Orders\AdWords SalesOrders.Outputs[OLE DB Source Output].Columns[TaxAmt]"
+                          dataType="cy"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load Sales Orders\DFT Sales Orders\AdWords SalesOrders.Outputs[OLE DB Source Output].ExternalColumns[TaxAmt]"
+                          lineageId="Package\Load Sales Orders\DFT Sales Orders\AdWords SalesOrders.Outputs[OLE DB Source Output].Columns[TaxAmt]"
+                          name="TaxAmt"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Load Sales Orders\DFT Sales Orders\AdWords SalesOrders.Outputs[OLE DB Source Output].Columns[Freight]"
+                          dataType="cy"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load Sales Orders\DFT Sales Orders\AdWords SalesOrders.Outputs[OLE DB Source Output].ExternalColumns[Freight]"
+                          lineageId="Package\Load Sales Orders\DFT Sales Orders\AdWords SalesOrders.Outputs[OLE DB Source Output].Columns[Freight]"
+                          name="Freight"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Load Sales Orders\DFT Sales Orders\AdWords SalesOrders.Outputs[OLE DB Source Output].ExternalColumns[SalesOrderID]"
+                          dataType="i4"
+                          name="SalesOrderID" />
+                        <externalMetadataColumn
+                          refId="Package\Load Sales Orders\DFT Sales Orders\AdWords SalesOrders.Outputs[OLE DB Source Output].ExternalColumns[OrderDate]"
+                          dataType="dbTimeStamp"
+                          name="OrderDate" />
+                        <externalMetadataColumn
+                          refId="Package\Load Sales Orders\DFT Sales Orders\AdWords SalesOrders.Outputs[OLE DB Source Output].ExternalColumns[SalesOrderNumber]"
+                          dataType="wstr"
+                          length="25"
+                          name="SalesOrderNumber" />
+                        <externalMetadataColumn
+                          refId="Package\Load Sales Orders\DFT Sales Orders\AdWords SalesOrders.Outputs[OLE DB Source Output].ExternalColumns[CustomerID]"
+                          dataType="i4"
+                          name="CustomerID" />
+                        <externalMetadataColumn
+                          refId="Package\Load Sales Orders\DFT Sales Orders\AdWords SalesOrders.Outputs[OLE DB Source Output].ExternalColumns[SalesPersonID]"
+                          dataType="i4"
+                          name="SalesPersonID" />
+                        <externalMetadataColumn
+                          refId="Package\Load Sales Orders\DFT Sales Orders\AdWords SalesOrders.Outputs[OLE DB Source Output].ExternalColumns[SubTotal]"
+                          dataType="cy"
+                          name="SubTotal" />
+                        <externalMetadataColumn
+                          refId="Package\Load Sales Orders\DFT Sales Orders\AdWords SalesOrders.Outputs[OLE DB Source Output].ExternalColumns[TaxAmt]"
+                          dataType="cy"
+                          name="TaxAmt" />
+                        <externalMetadataColumn
+                          refId="Package\Load Sales Orders\DFT Sales Orders\AdWords SalesOrders.Outputs[OLE DB Source Output].ExternalColumns[Freight]"
+                          dataType="cy"
+                          name="Freight" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Load Sales Orders\DFT Sales Orders\AdWords SalesOrders.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load Sales Orders\DFT Sales Orders\AdWords SalesOrders.Outputs[OLE DB Source Error Output].Columns[SalesOrderID]"
+                          dataType="i4"
+                          lineageId="Package\Load Sales Orders\DFT Sales Orders\AdWords SalesOrders.Outputs[OLE DB Source Error Output].Columns[SalesOrderID]"
+                          name="SalesOrderID" />
+                        <outputColumn
+                          refId="Package\Load Sales Orders\DFT Sales Orders\AdWords SalesOrders.Outputs[OLE DB Source Error Output].Columns[OrderDate]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\Load Sales Orders\DFT Sales Orders\AdWords SalesOrders.Outputs[OLE DB Source Error Output].Columns[OrderDate]"
+                          name="OrderDate" />
+                        <outputColumn
+                          refId="Package\Load Sales Orders\DFT Sales Orders\AdWords SalesOrders.Outputs[OLE DB Source Error Output].Columns[SalesOrderNumber]"
+                          dataType="wstr"
+                          length="25"
+                          lineageId="Package\Load Sales Orders\DFT Sales Orders\AdWords SalesOrders.Outputs[OLE DB Source Error Output].Columns[SalesOrderNumber]"
+                          name="SalesOrderNumber" />
+                        <outputColumn
+                          refId="Package\Load Sales Orders\DFT Sales Orders\AdWords SalesOrders.Outputs[OLE DB Source Error Output].Columns[CustomerID]"
+                          dataType="i4"
+                          lineageId="Package\Load Sales Orders\DFT Sales Orders\AdWords SalesOrders.Outputs[OLE DB Source Error Output].Columns[CustomerID]"
+                          name="CustomerID" />
+                        <outputColumn
+                          refId="Package\Load Sales Orders\DFT Sales Orders\AdWords SalesOrders.Outputs[OLE DB Source Error Output].Columns[SalesPersonID]"
+                          dataType="i4"
+                          lineageId="Package\Load Sales Orders\DFT Sales Orders\AdWords SalesOrders.Outputs[OLE DB Source Error Output].Columns[SalesPersonID]"
+                          name="SalesPersonID" />
+                        <outputColumn
+                          refId="Package\Load Sales Orders\DFT Sales Orders\AdWords SalesOrders.Outputs[OLE DB Source Error Output].Columns[SubTotal]"
+                          dataType="cy"
+                          lineageId="Package\Load Sales Orders\DFT Sales Orders\AdWords SalesOrders.Outputs[OLE DB Source Error Output].Columns[SubTotal]"
+                          name="SubTotal" />
+                        <outputColumn
+                          refId="Package\Load Sales Orders\DFT Sales Orders\AdWords SalesOrders.Outputs[OLE DB Source Error Output].Columns[TaxAmt]"
+                          dataType="cy"
+                          lineageId="Package\Load Sales Orders\DFT Sales Orders\AdWords SalesOrders.Outputs[OLE DB Source Error Output].Columns[TaxAmt]"
+                          name="TaxAmt" />
+                        <outputColumn
+                          refId="Package\Load Sales Orders\DFT Sales Orders\AdWords SalesOrders.Outputs[OLE DB Source Error Output].Columns[Freight]"
+                          dataType="cy"
+                          lineageId="Package\Load Sales Orders\DFT Sales Orders\AdWords SalesOrders.Outputs[OLE DB Source Error Output].Columns[Freight]"
+                          name="Freight" />
+                        <outputColumn
+                          refId="Package\Load Sales Orders\DFT Sales Orders\AdWords SalesOrders.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Load Sales Orders\DFT Sales Orders\AdWords SalesOrders.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Load Sales Orders\DFT Sales Orders\AdWords SalesOrders.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Load Sales Orders\DFT Sales Orders\AdWords SalesOrders.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Load Sales Orders\DFT Sales Orders\Staging dbo_SalesOrders"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="Staging dbo_SalesOrders"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[SalesOrders]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Load Sales Orders\DFT Sales Orders\Staging dbo_SalesOrders.Connections[OleDbConnection]"
+                      connectionManagerID="{9B5D6336-6C59-41D4-9308-3D490A49353E}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[StagingDB_OLEDB]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Load Sales Orders\DFT Sales Orders\Staging dbo_SalesOrders.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Load Sales Orders\DFT Sales Orders\Staging dbo_SalesOrders.Inputs[OLE DB Destination Input].Columns[SalesOrderID]"
+                          cachedDataType="i4"
+                          cachedName="SalesOrderID"
+                          externalMetadataColumnId="Package\Load Sales Orders\DFT Sales Orders\Staging dbo_SalesOrders.Inputs[OLE DB Destination Input].ExternalColumns[SalesOrderID]"
+                          lineageId="Package\Load Sales Orders\DFT Sales Orders\AdWords SalesOrders.Outputs[OLE DB Source Output].Columns[SalesOrderID]" />
+                        <inputColumn
+                          refId="Package\Load Sales Orders\DFT Sales Orders\Staging dbo_SalesOrders.Inputs[OLE DB Destination Input].Columns[OrderDate]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="OrderDate"
+                          externalMetadataColumnId="Package\Load Sales Orders\DFT Sales Orders\Staging dbo_SalesOrders.Inputs[OLE DB Destination Input].ExternalColumns[OrderDate]"
+                          lineageId="Package\Load Sales Orders\DFT Sales Orders\AdWords SalesOrders.Outputs[OLE DB Source Output].Columns[OrderDate]" />
+                        <inputColumn
+                          refId="Package\Load Sales Orders\DFT Sales Orders\Staging dbo_SalesOrders.Inputs[OLE DB Destination Input].Columns[SalesOrderNumber]"
+                          cachedDataType="wstr"
+                          cachedLength="25"
+                          cachedName="SalesOrderNumber"
+                          externalMetadataColumnId="Package\Load Sales Orders\DFT Sales Orders\Staging dbo_SalesOrders.Inputs[OLE DB Destination Input].ExternalColumns[SalesOrderNumber]"
+                          lineageId="Package\Load Sales Orders\DFT Sales Orders\AdWords SalesOrders.Outputs[OLE DB Source Output].Columns[SalesOrderNumber]" />
+                        <inputColumn
+                          refId="Package\Load Sales Orders\DFT Sales Orders\Staging dbo_SalesOrders.Inputs[OLE DB Destination Input].Columns[CustomerID]"
+                          cachedDataType="i4"
+                          cachedName="CustomerID"
+                          externalMetadataColumnId="Package\Load Sales Orders\DFT Sales Orders\Staging dbo_SalesOrders.Inputs[OLE DB Destination Input].ExternalColumns[CustomerID]"
+                          lineageId="Package\Load Sales Orders\DFT Sales Orders\AdWords SalesOrders.Outputs[OLE DB Source Output].Columns[CustomerID]" />
+                        <inputColumn
+                          refId="Package\Load Sales Orders\DFT Sales Orders\Staging dbo_SalesOrders.Inputs[OLE DB Destination Input].Columns[SalesPersonID]"
+                          cachedDataType="i4"
+                          cachedName="SalesPersonID"
+                          externalMetadataColumnId="Package\Load Sales Orders\DFT Sales Orders\Staging dbo_SalesOrders.Inputs[OLE DB Destination Input].ExternalColumns[SalesPersonID]"
+                          lineageId="Package\Load Sales Orders\DFT Sales Orders\AdWords SalesOrders.Outputs[OLE DB Source Output].Columns[SalesPersonID]" />
+                        <inputColumn
+                          refId="Package\Load Sales Orders\DFT Sales Orders\Staging dbo_SalesOrders.Inputs[OLE DB Destination Input].Columns[SubTotal]"
+                          cachedDataType="cy"
+                          cachedName="SubTotal"
+                          externalMetadataColumnId="Package\Load Sales Orders\DFT Sales Orders\Staging dbo_SalesOrders.Inputs[OLE DB Destination Input].ExternalColumns[SubTotal]"
+                          lineageId="Package\Load Sales Orders\DFT Sales Orders\AdWords SalesOrders.Outputs[OLE DB Source Output].Columns[SubTotal]" />
+                        <inputColumn
+                          refId="Package\Load Sales Orders\DFT Sales Orders\Staging dbo_SalesOrders.Inputs[OLE DB Destination Input].Columns[TaxAmt]"
+                          cachedDataType="cy"
+                          cachedName="TaxAmt"
+                          externalMetadataColumnId="Package\Load Sales Orders\DFT Sales Orders\Staging dbo_SalesOrders.Inputs[OLE DB Destination Input].ExternalColumns[TaxAmt]"
+                          lineageId="Package\Load Sales Orders\DFT Sales Orders\AdWords SalesOrders.Outputs[OLE DB Source Output].Columns[TaxAmt]" />
+                        <inputColumn
+                          refId="Package\Load Sales Orders\DFT Sales Orders\Staging dbo_SalesOrders.Inputs[OLE DB Destination Input].Columns[Freight]"
+                          cachedDataType="cy"
+                          cachedName="Freight"
+                          externalMetadataColumnId="Package\Load Sales Orders\DFT Sales Orders\Staging dbo_SalesOrders.Inputs[OLE DB Destination Input].ExternalColumns[Freight]"
+                          lineageId="Package\Load Sales Orders\DFT Sales Orders\AdWords SalesOrders.Outputs[OLE DB Source Output].Columns[Freight]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Load Sales Orders\DFT Sales Orders\Staging dbo_SalesOrders.Inputs[OLE DB Destination Input].ExternalColumns[SalesOrderID]"
+                          dataType="i4"
+                          name="SalesOrderID" />
+                        <externalMetadataColumn
+                          refId="Package\Load Sales Orders\DFT Sales Orders\Staging dbo_SalesOrders.Inputs[OLE DB Destination Input].ExternalColumns[OrderDate]"
+                          dataType="dbTimeStamp"
+                          name="OrderDate" />
+                        <externalMetadataColumn
+                          refId="Package\Load Sales Orders\DFT Sales Orders\Staging dbo_SalesOrders.Inputs[OLE DB Destination Input].ExternalColumns[SalesOrderNumber]"
+                          dataType="wstr"
+                          length="25"
+                          name="SalesOrderNumber" />
+                        <externalMetadataColumn
+                          refId="Package\Load Sales Orders\DFT Sales Orders\Staging dbo_SalesOrders.Inputs[OLE DB Destination Input].ExternalColumns[CustomerID]"
+                          dataType="i4"
+                          name="CustomerID" />
+                        <externalMetadataColumn
+                          refId="Package\Load Sales Orders\DFT Sales Orders\Staging dbo_SalesOrders.Inputs[OLE DB Destination Input].ExternalColumns[SalesPersonID]"
+                          dataType="i4"
+                          name="SalesPersonID" />
+                        <externalMetadataColumn
+                          refId="Package\Load Sales Orders\DFT Sales Orders\Staging dbo_SalesOrders.Inputs[OLE DB Destination Input].ExternalColumns[SubTotal]"
+                          dataType="cy"
+                          name="SubTotal" />
+                        <externalMetadataColumn
+                          refId="Package\Load Sales Orders\DFT Sales Orders\Staging dbo_SalesOrders.Inputs[OLE DB Destination Input].ExternalColumns[TaxAmt]"
+                          dataType="cy"
+                          name="TaxAmt" />
+                        <externalMetadataColumn
+                          refId="Package\Load Sales Orders\DFT Sales Orders\Staging dbo_SalesOrders.Inputs[OLE DB Destination Input].ExternalColumns[Freight]"
+                          dataType="cy"
+                          name="Freight" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Load Sales Orders\DFT Sales Orders\Staging dbo_SalesOrders.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Load Sales Orders\DFT Sales Orders\Staging dbo_SalesOrders.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load Sales Orders\DFT Sales Orders\Staging dbo_SalesOrders.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Load Sales Orders\DFT Sales Orders\Staging dbo_SalesOrders.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Load Sales Orders\DFT Sales Orders\Staging dbo_SalesOrders.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Load Sales Orders\DFT Sales Orders\Staging dbo_SalesOrders.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Load Sales Orders\DFT Sales Orders.Paths[OLE DB Source Output]"
+                  endId="Package\Load Sales Orders\DFT Sales Orders\Staging dbo_SalesOrders.Inputs[OLE DB Destination Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\Load Sales Orders\DFT Sales Orders\AdWords SalesOrders.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Load Sales Orders\Log Inc Load Start"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{4ADC560D-A177-42B1-9EFF-CFC8204ADE89}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Log Inc Load Start"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="3">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{76139998-2EEC-4DEE-ABD0-16AC4D52D1B9}"
+              SQLTask:BypassPrepare="False"
+              SQLTask:SqlStatementSource="EXEC dbo.SetPackageIncLoadStart&#xA;@PackageID      = @PackageID,&#xA;@PackageName    = @PackageName,&#xA;@ExecutionID    = @ExecutionID OUTPUT,&#xA;@FactStartDate  = @FactStartDate OUTPUT,&#xA;@FactEndDate    = @FactEndDate OUTPUT;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="@PackageID"
+                SQLTask:DtsVariableName="System::PackageID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="16"
+                SQLTask:ParameterSize="50" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="@PackageName"
+                SQLTask:DtsVariableName="System::PackageName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="16"
+                SQLTask:ParameterSize="100" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="@ExecutionID"
+                SQLTask:DtsVariableName="User::ExecutionID"
+                SQLTask:ParameterDirection="Output"
+                SQLTask:DataType="16"
+                SQLTask:ParameterSize="50" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="@FactStartDate"
+                SQLTask:DtsVariableName="User::FactStartDate"
+                SQLTask:ParameterDirection="Output"
+                SQLTask:DataType="5"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="@FactEndDate"
+                SQLTask:DtsVariableName="User::FactEndDate"
+                SQLTask:ParameterDirection="Output"
+                SQLTask:DataType="5"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Load Sales Orders\Log Inc LoadEnd Failed"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{295bd33f-0281-48fa-b8a5-43221a7cd6e1}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Log Inc LoadEnd Failed"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="3">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{76139998-2EEC-4DEE-ABD0-16AC4D52D1B9}"
+              SQLTask:BypassPrepare="False"
+              SQLTask:SqlStatementSource="EXEC dbo.SetPackageIncLoadEnd&#xA;@ExecutionID    = @ExecutionID,&#xA;@IsSuccessful = 0" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="@ExecutionID"
+                SQLTask:DtsVariableName="User::ExecutionID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="16"
+                SQLTask:ParameterSize="50" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Load Sales Orders\Log Inc LoadEnd Successful"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{c6cba815-be45-460b-a0ff-5866fc74d529}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Log Inc LoadEnd Successful"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="4">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{76139998-2EEC-4DEE-ABD0-16AC4D52D1B9}"
+              SQLTask:BypassPrepare="False"
+              SQLTask:SqlStatementSource="EXEC dbo.SetPackageIncLoadEnd&#xA;@ExecutionID    = @ExecutionID,&#xA;@IsSuccessful = 1" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="@ExecutionID"
+                SQLTask:DtsVariableName="User::ExecutionID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="16"
+                SQLTask:ParameterSize="50" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Load Sales Orders\post-load Sales Orders"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{93bf9b90-4409-43dc-8a45-9a5dcd2fbffc}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="post-load Sales Orders"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="4">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{9B5D6336-6C59-41D4-9308-3D490A49353E}"
+              SQLTask:SqlStatementSource="ALTER TABLE dbo.SalesOrders&#xA;    ADD CONSTRAINT PK_SalesOrders PRIMARY KEY (SalesOrderID);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Load Sales Orders\pre-load Sales Orders"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{f14a69e5-7bbf-4bcb-bc65-596467ee0efd}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="pre-load Sales Orders"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="4">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{9B5D6336-6C59-41D4-9308-3D490A49353E}"
+              SQLTask:SqlStatementSource="TRUNCATE TABLE dbo.SalesOrders;&#xA;&#xA;ALTER TABLE dbo.SalesOrders&#xA;DROP CONSTRAINT PK_SalesOrders;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Load Sales Orders.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{2008784A-B509-4799-AB32-233DCA22AB04}"
+          DTS:From="Package\Load Sales Orders\Log Inc Load Start"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Load Sales Orders\DFT Sales Orders" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Load Sales Orders.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{F70ECC89-8AD9-43D4-BEC4-799CB32570D0}"
+          DTS:From="Package\Load Sales Orders\pre-load Sales Orders"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Load Sales Orders\DFT Sales Orders" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Load Sales Orders.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{0520C3CE-E6D8-412A-A8B8-C535EA3D8D14}"
+          DTS:From="Package\Load Sales Orders\DFT Sales Orders"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\Load Sales Orders\Log Inc LoadEnd Successful" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Load Sales Orders.PrecedenceConstraints[Constraint 3]"
+          DTS:CreationName=""
+          DTS:DTSID="{22DF871E-0954-4508-965F-3C0C71634332}"
+          DTS:From="Package\Load Sales Orders\Log Inc LoadEnd Successful"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 3"
+          DTS:To="Package\Load Sales Orders\post-load Sales Orders" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Load Sales Orders.PrecedenceConstraints[Constraint 4]"
+          DTS:CreationName=""
+          DTS:DTSID="{A70BE6B8-C4F1-4448-A8FF-F357B1DBC807}"
+          DTS:From="Package\Load Sales Orders\DFT Sales Orders"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 4"
+          DTS:To="Package\Load Sales Orders\Log Inc LoadEnd Failed"
+          DTS:Value="1" />
       </DTS:PrecedenceConstraints>
     </DTS:Executable>
   </DTS:Executables>
@@ -352,29 +1928,55 @@ FROM Sales.Customer;</property>
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="166,42"
-          Id="Package\Load Customer\pre-load Customer"
-          TopLeft="75,22" />
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="146,42"
           Id="Package\Load Customer\DFT Customer"
-          TopLeft="82,103" />
+          TopLeft="72,100" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Load Customer\post-load Customer"
+          TopLeft="55,185" />
+        <NodeLayout
+          Size="166,42"
+          Id="Package\Load Customer\pre-load Customer"
+          TopLeft="60,20" />
         <EdgeLayout
           Id="Package\Load Customer.PrecedenceConstraints[Constraint]"
-          TopLeft="156.5,64">
+          TopLeft="144,62">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,39"
+              EndConnector="0,38"
               Start="0,0"
-              End="0,31.5">
+              End="0,30.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.5" />
+                    End="0,30.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Customer.PrecedenceConstraints[Constraint 1]"
+          TopLeft="142.75,142">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,43"
+              Start="0,0"
+              End="0,35.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -385,11 +1987,348 @@ FROM Sales.Customer;</property>
         </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="332,202"
-          Size="332,245"
+          IsExpanded="False"
+          PanelSize="278,300"
+          Size="173,43"
           Id="Package\Load Customer"
-          TopLeft="95,49" />
+          TopLeft="21,23" />
+        <NodeLayout
+          Size="147,42"
+          Id="Package\Load Employee\DFT Employee"
+          TopLeft="71,109" />
+        <NodeLayout
+          Size="172,42"
+          Id="Package\Load Employee\post-load Employee"
+          TopLeft="62,210" />
+        <NodeLayout
+          Size="167,42"
+          Id="Package\Load Employee\pre-load Employee"
+          TopLeft="62,18" />
+        <EdgeLayout
+          Id="Package\Load Employee.PrecedenceConstraints[Constraint]"
+          TopLeft="145,60">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,49"
+              Start="0,0"
+              End="0,41.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Employee.PrecedenceConstraints[Constraint 1]"
+          TopLeft="146.25,151">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59"
+              Start="0,0"
+              End="0,51.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,51.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="False"
+          PanelSize="304,307"
+          Size="304,43"
+          Id="Package\Load Employee"
+          TopLeft="684,28" />
+        <NodeLayout
+          Size="133,42"
+          Id="Package\Load Person\DFT Person"
+          TopLeft="71,109" />
+        <NodeLayout
+          Size="158,42"
+          Id="Package\Load Person\post-load Person"
+          TopLeft="62,210" />
+        <NodeLayout
+          Size="153,42"
+          Id="Package\Load Person\pre-load Person"
+          TopLeft="62,18" />
+        <EdgeLayout
+          Id="Package\Load Person.PrecedenceConstraints[Constraint]"
+          TopLeft="138,60">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,49"
+              Start="0,0"
+              End="0,41.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Person.PrecedenceConstraints[Constraint 1]"
+          TopLeft="139.25,151">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59"
+              Start="0,0"
+              End="0,51.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,51.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="False"
+          PanelSize="304,296"
+          Size="304,43"
+          Id="Package\Load Person"
+          TopLeft="331,27" />
+        <NodeLayout
+          Size="166,42"
+          Id="Package\Load Sales Orders\Log Inc Load Start"
+          TopLeft="41,29" />
+        <NodeLayout
+          Size="180,42"
+          Id="Package\Load Sales Orders\pre-load Sales Orders"
+          TopLeft="255,28" />
+        <NodeLayout
+          Size="161,42"
+          Id="Package\Load Sales Orders\DFT Sales Orders"
+          TopLeft="160,131" />
+        <EdgeLayout
+          Id="Package\Load Sales Orders.PrecedenceConstraints[Constraint]"
+          TopLeft="124,71">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="91,60"
+              Start="0,0"
+              End="91,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.6457564575646" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.6457564575646"
+                    Point2="0,35.6457564575646"
+                    Point3="4,35.6457564575646" />
+                  <mssgle:LineSegment
+                    End="87,35.6457564575646" />
+                  <mssgle:CubicBezierSegment
+                    Point1="87,35.6457564575646"
+                    Point2="91,35.6457564575646"
+                    Point3="91,39.6457564575646" />
+                  <mssgle:LineSegment
+                    End="91,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Sales Orders.PrecedenceConstraints[Constraint 1]"
+          TopLeft="345,70">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-79,61"
+              Start="0,0"
+              End="-79,53.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.239852398524" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,32.239852398524"
+                    Point2="0,36.239852398524"
+                    Point3="-4,36.239852398524" />
+                  <mssgle:LineSegment
+                    End="-75,36.239852398524" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-75,36.239852398524"
+                    Point2="-79,36.239852398524"
+                    Point3="-79,40.239852398524" />
+                  <mssgle:LineSegment
+                    End="-79,53.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="185,42"
+          Id="Package\Load Sales Orders\post-load Sales Orders"
+          TopLeft="149,297" />
+        <NodeLayout
+          Size="210,42"
+          Id="Package\Load Sales Orders\Log Inc LoadEnd Successful"
+          TopLeft="37,207" />
+        <EdgeLayout
+          Id="Package\Load Sales Orders.PrecedenceConstraints[Constraint 2]"
+          TopLeft="240.5,173">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-98.5,34"
+              Start="0,0"
+              End="-98.5,26.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13"
+                    Point2="0,17"
+                    Point3="-4,17" />
+                  <mssgle:LineSegment
+                    End="-94.5,17" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-94.5,17"
+                    Point2="-98.5,17"
+                    Point3="-98.5,21" />
+                  <mssgle:LineSegment
+                    End="-98.5,26.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Sales Orders.PrecedenceConstraints[Constraint 3]"
+          TopLeft="142,249">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="99.5,48"
+              Start="0,0"
+              End="99.5,40.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20"
+                    Point2="0,24"
+                    Point3="4,24" />
+                  <mssgle:LineSegment
+                    End="95.5,24" />
+                  <mssgle:CubicBezierSegment
+                    Point1="95.5,24"
+                    Point2="99.5,24"
+                    Point3="99.5,28" />
+                  <mssgle:LineSegment
+                    End="99.5,40.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="189,42"
+          Id="Package\Load Sales Orders\Log Inc LoadEnd Failed"
+          TopLeft="267,212" />
+        <EdgeLayout
+          Id="Package\Load Sales Orders.PrecedenceConstraints[Constraint 4]"
+          TopLeft="266,173">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="95.5,39"
+              Start="0,0"
+              End="95.5,31.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,11.830258302583" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11.830258302583"
+                    Point2="0,15.830258302583"
+                    Point3="4,15.830258302583" />
+                  <mssgle:LineSegment
+                    End="91.5,15.830258302583" />
+                  <mssgle:CubicBezierSegment
+                    Point1="91.5,15.830258302583"
+                    Point2="95.5,15.830258302583"
+                    Point3="95.5,19.830258302583" />
+                  <mssgle:LineSegment
+                    End="95.5,31.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="32.50865234375,20.830258302583,30.4826953125,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="False"
+          PanelSize="505,430"
+          Size="505,43"
+          Id="Package\Load Sales Orders"
+          TopLeft="379,132" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -397,18 +2336,18 @@ FROM Sales.Customer;</property>
     design-time-name="Package\Load Customer\DFT Customer">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="200,42"
-          Id="Package\Load Customer\DFT Customer\AdWorkd Sales_Customer"
-          TopLeft="228,59" />
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="186,42"
           Id="Package\Load Customer\DFT Customer\Staging dbo_Customer"
           TopLeft="228,169" />
+        <NodeLayout
+          Size="199,42"
+          Id="Package\Load Customer\DFT Customer\AdWorks Sales_Customer"
+          TopLeft="228,59" />
         <EdgeLayout
           Id="Package\Load Customer\DFT Customer.Paths[OLE DB Source Output]"
-          TopLeft="324.5,101">
+          TopLeft="324.25,101">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -425,14 +2364,16 @@ FROM Sales.Customer;</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Load Customer\DFT Customer\AdWorkd Sales_Customer">
+    design-time-name="Package\Load Customer\DFT Customer\AdWorks Sales_Customer">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -446,6 +2387,223 @@ FROM Sales.Customer;</property>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Load Customer\DFT Customer\Staging dbo_Customer">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Load Employee\DFT Employee">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="187,42"
+          Id="Package\Load Employee\DFT Employee\Staging dbo_Employee"
+          TopLeft="242,159" />
+        <NodeLayout
+          Size="189,42"
+          Id="Package\Load Employee\DFT Employee\AdWorks HR_Employee"
+          TopLeft="228,59" />
+        <EdgeLayout
+          Id="Package\Load Employee\DFT Employee.Paths[OLE DB Source Output]"
+          TopLeft="322.5,101">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="13,58"
+              Start="0,0"
+              End="13,50.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25"
+                    Point2="0,29"
+                    Point3="4,29" />
+                  <mssgle:LineSegment
+                    End="9,29" />
+                  <mssgle:CubicBezierSegment
+                    Point1="9,29"
+                    Point2="13,29"
+                    Point3="13,33" />
+                  <mssgle:LineSegment
+                    End="13,50.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Employee\DFT Employee\AdWorks HR_Employee">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Employee\DFT Employee\Staging dbo_Employee">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Load Person\DFT Person">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="173,42"
+          Id="Package\Load Person\DFT Person\Staging dbo_Person"
+          TopLeft="250,166" />
+        <NodeLayout
+          Size="193,42"
+          Id="Package\Load Person\DFT Person\AdWorks Person_Person"
+          TopLeft="228,59" />
+        <EdgeLayout
+          Id="Package\Load Person\DFT Person.Paths[OLE DB Source Output]"
+          TopLeft="324.5,101">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="12,65"
+              Start="0,0"
+              End="12,57.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.5"
+                    Point2="0,32.5"
+                    Point3="4,32.5" />
+                  <mssgle:LineSegment
+                    End="8,32.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="8,32.5"
+                    Point2="12,32.5"
+                    Point3="12,36.5" />
+                  <mssgle:LineSegment
+                    End="12,57.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Person\DFT Person\AdWorks Person_Person">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Person\DFT Person\Staging dbo_Person">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Load Sales Orders\DFT Sales Orders">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="180,42"
+          Id="Package\Load Sales Orders\DFT Sales Orders\AdWords SalesOrders"
+          TopLeft="284,80" />
+        <NodeLayout
+          Size="197,42"
+          Id="Package\Load Sales Orders\DFT Sales Orders\Staging dbo_SalesOrders"
+          TopLeft="286,176" />
+        <EdgeLayout
+          Id="Package\Load Sales Orders\DFT Sales Orders.Paths[OLE DB Source Output]"
+          TopLeft="374,122">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="10.5,54"
+              Start="0,0"
+              End="10.5,46.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23"
+                    Point2="0,27"
+                    Point3="4,27" />
+                  <mssgle:LineSegment
+                    End="6.5,27" />
+                  <mssgle:CubicBezierSegment
+                    Point1="6.5,27"
+                    Point2="10.5,27"
+                    Point3="10.5,31" />
+                  <mssgle:LineSegment
+                    End="10.5,46.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Sales Orders\DFT Sales Orders\AdWords SalesOrders">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Sales Orders\DFT Sales Orders\Staging dbo_SalesOrders">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

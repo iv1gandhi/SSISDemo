@@ -3,8 +3,6 @@
   DTS:ObjectName="AdventureWorks2016"
   DTS:DTSID="{459820CA-204E-4FD0-B756-A6635D6292CF}"
   DTS:CreationName="OLEDB">
-  <DTS:PropertyExpression
-    DTS:Name="ConnectionString">@[$Project::AdventureWorks2016_ConnectionString]</DTS:PropertyExpression>
   <DTS:ObjectData>
     <DTS:ConnectionManager
       DTS:ConnectionString="Data Source=EPRUPETW1813\MSSQL2017MD;Initial Catalog=AdventureWorks2016;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />

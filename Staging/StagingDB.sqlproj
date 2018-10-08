@@ -70,5 +70,8 @@
     <Build Include="Schemas\Schema Objects\Tables\Person.sql" />
     <Build Include="Schemas\Schema Objects\Tables\Employee.sql" />
     <Build Include="Schemas\Schema Objects\Tables\SalesOrders.sql" />
+    <Build Include="Schemas\Schema Objects\Tables\LogPackagesIncLoad.sql" />
+    <Build Include="Schemas\Programmability\Stored Procedures\SetPackageIncLoadStart.sql" />
+    <Build Include="Schemas\Programmability\Stored Procedures\SetPackageIncLoadEnd.sql" />
   </ItemGroup>
 </Project>
