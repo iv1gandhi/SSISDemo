@@ -11,8 +11,9 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="MasterDWH"
   DTS:PackageType="5"
-  DTS:VersionBuild="6"
-  DTS:VersionGUID="{CC70DB9E-DDFD-4879-ABF1-6D51A8CC4EDB}">
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="7"
+  DTS:VersionGUID="{0C9C89DF-305E-455D-9C14-8D38B490689D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -133,17 +134,17 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="146,42"
-          Id="Package\Load Dimensions\Load DimDate"
-          TopLeft="57,42" />
+          Size="186,42"
+          Id="Package\Load Dimensions\Load Dim Sales Person"
+          TopLeft="490,44" />
         <NodeLayout
           Size="168,42"
           Id="Package\Load Dimensions\Load DimCustomer"
           TopLeft="258,42" />
         <NodeLayout
-          Size="186,42"
-          Id="Package\Load Dimensions\Load Dim Sales Person"
-          TopLeft="490,44" />
+          Size="146,42"
+          Id="Package\Load Dimensions\Load DimDate"
+          TopLeft="57,42" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"

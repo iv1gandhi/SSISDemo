@@ -11,8 +11,9 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="LoadDimCustomer"
   DTS:PackageType="5"
-  DTS:VersionBuild="23"
-  DTS:VersionGUID="{FCA2590D-4F22-40FD-B6DF-72500A069E7E}">
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="24"
+  DTS:VersionGUID="{E26DCBC6-8A42-4434-8017-2113663C6C7A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -628,7 +629,7 @@ WHERE Rnum = 1;</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -638,7 +639,7 @@ WHERE Rnum = 1;</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>

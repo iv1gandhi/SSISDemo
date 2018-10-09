@@ -11,8 +11,9 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="LoadDimSalesPerson"
   DTS:PackageType="5"
-  DTS:VersionBuild="16"
-  DTS:VersionGUID="{0753531A-B213-4371-8B55-F42B0E9683E3}">
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="17"
+  DTS:VersionGUID="{FFB7611B-2974-47DC-8879-26AF4CD4E868}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
